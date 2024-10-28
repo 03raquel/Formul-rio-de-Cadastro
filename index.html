@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+
+    <h1>Formulário de Cadastro</h1>
+
+    <form id="cadastroForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required minlength="8">
+
+        <label for="data-nascimento">Data de Nascimento:</label>
+        <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+        <label>Gênero:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+            <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+            <label><input type="radio" name="genero" value="outro"> Outro</label>
+        </div>
+
+        <label for="cidade">Cidade:</label>
+        <select id="cidade" name="cidade" required>
+            <option value="">Selecione uma cidade</option>
+            <option value="sao-paulo">Salvador</option>
+            <option value="rio-de-janeiro">Fortaleza</option>
+            <option value="belo-horizonte">Belo Horizonte</option>
+        </select>
+
+        <label for="quantidade">Quantidade de Produtos:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" max="100" required>
+
+        <label for="observacoes">Observações Adicionais:</label>
+        <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+
+        <div class="checkbox-group">
+            <label>Interesses:</label>
+            <label><input type="checkbox" name="interesses" value="tecnologia"> Tecnologia</label>
+            <label><input type="checkbox" name="interesses" value="saude"> Saúde</label>
+            <label><input type="checkbox" name="interesses" value="educacao"> Educação</label>
+            <label><input type="checkbox" name="interesses" value="esportes"> Esportes</label>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script>
+        document.getElementById('cadastroForm').onsubmit = function(event) {
+            alert("Formulário enviado com sucesso!");
+            event.preventDefault(); // Remove essa linha se você quiser realmente enviar o formulário
+        };
+    </script>
+
+</body>
+</html>
